@@ -21,12 +21,11 @@
 
 - (void)layoutSubviews
 {
+    // Yay for math!
     CGFloat x = MAX(CGRectGetMidX(self.frame), self.superview.frame.size.width - CGRectGetMidX(self.frame));
     CGFloat y = MAX(CGRectGetMidY(self.frame), self.superview.frame.size.height - CGRectGetMidY(self.frame));
-
     self.radius = sqrt(x*x + y*y);
     
-//    self.radius = 100;
     self.shape.frame = (CGRect){CGRectGetMidX(self.frame) - self.radius,
                                  CGRectGetMidY(self.frame) - self.radius, self.radius * 2, self.radius * 2};
     self.shape.anchorPoint = CGPointMake(0.5, 0.5);
@@ -35,11 +34,9 @@
 
 - (void)awakeFromNib
 {
-    [self setClipsToBounds:NO];
-    
     self.shape = [CAShapeLayer layer];
     self.shape.fillColor = self.onTintColor.CGColor;
-    self.shape.transform = CATransform3DMakeScale(0.0, 0.0, 0.0);
+    self.shape.transform = CATransform3DMakeScale(0.0001, 0.0001, 0.0001);
     
     [self.superview.layer insertSublayer:self.shape below:self.layer];
     
@@ -52,59 +49,50 @@
 - (void)switchChanged:(UISwitch *)sender
 {
     if (sender.on) {
-
-        self.shape.transform = CATransform3DMakeScale(0.0, 0.0, 0.0);
+        // Reset
         [self.shape removeAnimationForKey:@"scaleDown"];
+        [self.shape removeAnimationForKey:@"borderDown"];
+        self.shape.transform = CATransform3DMakeScale(0.0, 0.0, 0.0);
+        self.layer.borderWidth = 0;
         
-        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.0, 0.0, 0.0)];
-        animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)];
-        animation.repeatCount = 1;
-        animation.removedOnCompletion = NO;
-        animation.fillMode = kCAFillModeForwards;
-        animation.duration = kDURATION;
-
-        [self.shape addAnimation:animation forKey:@"scaleUp"];
+        CABasicAnimation *scaleAnimation = [self animateKeyPath:@"transform.scale"
+                                                      fromValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.0001, 0.0001, 0.0001)]
+                                                        toValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)]
+                                                         timing:kCAMediaTimingFunctionEaseIn];
+        [self.shape addAnimation:scaleAnimation forKey:@"scaleUp"];
         
-        animation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
-        animation.fromValue = @0;
-        animation.toValue = @1;
-        animation.repeatCount = 1;
-        animation.removedOnCompletion = NO;
-        animation.fillMode = kCAFillModeForwards;
-        animation.duration = kDURATION;
-        
-        [self.layer addAnimation:animation forKey:@"borderUp"];
-
+        CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@0 toValue:@1 timing:kCAMediaTimingFunctionEaseIn];
+        [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
         
     } else {
+        // Reset
         [self.shape removeAnimationForKey:@"scaleUp"];
         [self.shape removeAnimationForKey:@"borderUp"];
         self.layer.borderWidth = 1;
-
         self.shape.transform = CATransform3DMakeScale(1.0, 1.0, 1.0);
 
-        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)];
-        animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.01, 0.01, 0.01)];
-        animation.repeatCount = 1;
-        animation.removedOnCompletion = NO;
-        animation.fillMode = kCAFillModeForwards;
-        animation.duration = kDURATION;
+        CABasicAnimation *scaleAnimation = [self animateKeyPath:@"transform.scale"
+                                                      fromValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)]
+                                                        toValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.0001, 0.0001, 0.0001)]
+                                                         timing:kCAMediaTimingFunctionEaseOut];
+        [self.shape addAnimation:scaleAnimation forKey:@"scaleDown"];
         
-        [self.shape addAnimation:animation forKey:@"scaleDown"];
-        
-        animation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
-        animation.fromValue = @1;
-        animation.toValue = @0;
-        animation.repeatCount = 1;
-        animation.removedOnCompletion = NO;
-        animation.fillMode = kCAFillModeForwards;
-        animation.duration = kDURATION;
-        
-        [self.layer addAnimation:animation forKey:@"borderDown"];
+        CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@1 toValue:@0 timing:kCAMediaTimingFunctionEaseOut];
+        [self.layer addAnimation:borderAnimation forKey:@"borderDown"];
     }
 }
 
+- (CABasicAnimation *)animateKeyPath:(NSString *)keyPath fromValue:(id)from toValue:(id)to timing:(NSString *)timing
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:keyPath];
+    animation.fromValue = from;
+    animation.toValue = to;
+    animation.repeatCount = 1;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:timing];
+    animation.removedOnCompletion = NO;
+    animation.fillMode = kCAFillModeForwards;
+    animation.duration = kDURATION;
+    return animation;
+}
 
 @end
