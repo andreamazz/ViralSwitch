@@ -20,17 +20,36 @@
                                 <rect key="frame" x="136" y="268" width="51" height="31"/>
                                 <color key="onTintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-v3-W5p">
+                                <rect key="frame" x="130" y="100" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.47843137250000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1t0-xc-c5U"/>
+                                    <constraint firstAttribute="width" constant="60" id="bp2-qE-NRX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="FpN-v3-W5p" secondAttribute="centerX" id="0g7-1V-dgT"/>
+                            <constraint firstItem="FpN-v3-W5p" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="Fiq-sI-7MK"/>
                             <constraint firstAttribute="centerX" secondItem="yke-CT-eZm" secondAttribute="centerX" id="mti-Kt-Ptf"/>
                             <constraint firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="x2T-eJ-8zD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sampleView" destination="FpN-v3-W5p" id="zRK-w6-WhE"/>
+                        <outlet property="sw" destination="yke-CT-eZm" id="Gxz-fY-6Qk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234.66666666666666" y="368.25333333333333"/>
+            <point key="canvasLocation" x="234" y="368"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

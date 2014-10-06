@@ -8,6 +8,11 @@
 
 #import "AMViralSwitch.h"
 
+NSString *const AMElementView = @"AMElementView";
+NSString *const AMElementKeyPath = @"AMElementKeyPath";
+NSString *const AMElementFromValue = @"AMElementFromValue";
+NSString *const AMElementToValue = @"AMElementToValue";
+
 #define kDURATION   0.35
 
 @interface AMViralSwitch ()
@@ -64,6 +69,14 @@
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@0 toValue:@1 timing:kCAMediaTimingFunctionEaseIn];
         [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
         
+        for (NSDictionary *element in self.animationElementsOn) {
+            CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
+                                                            fromValue:element[AMElementFromValue]
+                                                              toValue:element[AMElementToValue]
+                                                               timing:kCAMediaTimingFunctionEaseIn];
+            [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+        }
+        
     } else {
         // Reset
         [self.shape removeAnimationForKey:@"scaleUp"];
@@ -79,6 +92,15 @@
         
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@1 toValue:@0 timing:kCAMediaTimingFunctionEaseOut];
         [self.layer addAnimation:borderAnimation forKey:@"borderDown"];
+        
+        for (NSDictionary *element in self.animationElementsOff) {
+            CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
+                                                            fromValue:element[AMElementFromValue]
+                                                              toValue:element[AMElementToValue]
+                                                               timing:kCAMediaTimingFunctionEaseIn];
+            [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+        }
+
     }
 }
 
