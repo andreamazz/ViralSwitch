@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6504432A19E2BD9500406B3F /* AMViralSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6504432919E2BD9500406B3F /* AMViralSwitch.m */; };
+		6507B1C819E2BD1100107F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1C719E2BD1100107F34 /* main.m */; };
+		6507B1CB19E2BD1100107F34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1CA19E2BD1100107F34 /* AppDelegate.m */; };
+		6507B1CE19E2BD1100107F34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1CD19E2BD1100107F34 /* ViewController.m */; };
+		6507B1D119E2BD1100107F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6507B1CF19E2BD1100107F34 /* Main.storyboard */; };
+		6507B1D319E2BD1100107F34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6507B1D219E2BD1100107F34 /* Images.xcassets */; };
+		6507B1D619E2BD1100107F34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6507B1D419E2BD1100107F34 /* LaunchScreen.xib */; };
+		6507B1E219E2BD1100107F34 /* ViralSwitchDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1E119E2BD1100107F34 /* ViralSwitchDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6507B1DC19E2BD1100107F34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6507B1BA19E2BD1000107F34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6507B1C119E2BD1000107F34;
+			remoteInfo = ViralSwitchDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6504432819E2BD9500406B3F /* AMViralSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMViralSwitch.h; sourceTree = "<group>"; };
+		6504432919E2BD9500406B3F /* AMViralSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMViralSwitch.m; sourceTree = "<group>"; };
+		6507B1C219E2BD1000107F34 /* ViralSwitchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViralSwitchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6507B1C619E2BD1100107F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6507B1C719E2BD1100107F34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6507B1C919E2BD1100107F34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6507B1CA19E2BD1100107F34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6507B1CC19E2BD1100107F34 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6507B1CD19E2BD1100107F34 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6507B1D019E2BD1100107F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6507B1D219E2BD1100107F34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6507B1D519E2BD1100107F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6507B1DB19E2BD1100107F34 /* ViralSwitchDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViralSwitchDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6507B1E019E2BD1100107F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6507B1E119E2BD1100107F34 /* ViralSwitchDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViralSwitchDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6507B1BF19E2BD1000107F34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6507B1D819E2BD1100107F34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6504432719E2BD7100406B3F /* ViralSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				6504432819E2BD9500406B3F /* AMViralSwitch.h */,
+				6504432919E2BD9500406B3F /* AMViralSwitch.m */,
+			);
+			name = ViralSwitch;
+			path = ../../ViralSwitch;
+			sourceTree = "<group>";
+		};
+		6507B1B919E2BD1000107F34 = {
+			isa = PBXGroup;
+			children = (
+				6507B1C419E2BD1000107F34 /* ViralSwitchDemo */,
+				6507B1DE19E2BD1100107F34 /* ViralSwitchDemoTests */,
+				6507B1C319E2BD1000107F34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6507B1C319E2BD1000107F34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6507B1C219E2BD1000107F34 /* ViralSwitchDemo.app */,
+				6507B1DB19E2BD1100107F34 /* ViralSwitchDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6507B1C419E2BD1000107F34 /* ViralSwitchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6504432719E2BD7100406B3F /* ViralSwitch */,
+				6507B1C919E2BD1100107F34 /* AppDelegate.h */,
+				6507B1CA19E2BD1100107F34 /* AppDelegate.m */,
+				6507B1CC19E2BD1100107F34 /* ViewController.h */,
+				6507B1CD19E2BD1100107F34 /* ViewController.m */,
+				6507B1CF19E2BD1100107F34 /* Main.storyboard */,
+				6507B1D219E2BD1100107F34 /* Images.xcassets */,
+				6507B1D419E2BD1100107F34 /* LaunchScreen.xib */,
+				6507B1C519E2BD1100107F34 /* Supporting Files */,
+			);
+			path = ViralSwitchDemo;
+			sourceTree = "<group>";
+		};
+		6507B1C519E2BD1100107F34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6507B1C619E2BD1100107F34 /* Info.plist */,
+				6507B1C719E2BD1100107F34 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6507B1DE19E2BD1100107F34 /* ViralSwitchDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6507B1E119E2BD1100107F34 /* ViralSwitchDemoTests.m */,
+				6507B1DF19E2BD1100107F34 /* Supporting Files */,
+			);
+			path = ViralSwitchDemoTests;
+			sourceTree = "<group>";
+		};
+		6507B1DF19E2BD1100107F34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6507B1E019E2BD1100107F34 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6507B1C119E2BD1000107F34 /* ViralSwitchDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6507B1E519E2BD1100107F34 /* Build configuration list for PBXNativeTarget "ViralSwitchDemo" */;
+			buildPhases = (
+				6507B1BE19E2BD1000107F34 /* Sources */,
+				6507B1BF19E2BD1000107F34 /* Frameworks */,
+				6507B1C019E2BD1000107F34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViralSwitchDemo;
+			productName = ViralSwitchDemo;
+			productReference = 6507B1C219E2BD1000107F34 /* ViralSwitchDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6507B1DA19E2BD1100107F34 /* ViralSwitchDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6507B1E819E2BD1100107F34 /* Build configuration list for PBXNativeTarget "ViralSwitchDemoTests" */;
+			buildPhases = (
+				6507B1D719E2BD1100107F34 /* Sources */,
+				6507B1D819E2BD1100107F34 /* Frameworks */,
+				6507B1D919E2BD1100107F34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6507B1DD19E2BD1100107F34 /* PBXTargetDependency */,
+			);
+			name = ViralSwitchDemoTests;
+			productName = ViralSwitchDemoTests;
+			productReference = 6507B1DB19E2BD1100107F34 /* ViralSwitchDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6507B1BA19E2BD1000107F34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Fancy Pixel";
+				TargetAttributes = {
+					6507B1C119E2BD1000107F34 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					6507B1DA19E2BD1100107F34 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 6507B1C119E2BD1000107F34;
+					};
+				};
+			};
+			buildConfigurationList = 6507B1BD19E2BD1000107F34 /* Build configuration list for PBXProject "ViralSwitchDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6507B1B919E2BD1000107F34;
+			productRefGroup = 6507B1C319E2BD1000107F34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6507B1C119E2BD1000107F34 /* ViralSwitchDemo */,
+				6507B1DA19E2BD1100107F34 /* ViralSwitchDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6507B1C019E2BD1000107F34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6507B1D119E2BD1100107F34 /* Main.storyboard in Resources */,
+				6507B1D619E2BD1100107F34 /* LaunchScreen.xib in Resources */,
+				6507B1D319E2BD1100107F34 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6507B1D919E2BD1100107F34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6507B1BE19E2BD1000107F34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6504432A19E2BD9500406B3F /* AMViralSwitch.m in Sources */,
+				6507B1CE19E2BD1100107F34 /* ViewController.m in Sources */,
+				6507B1CB19E2BD1100107F34 /* AppDelegate.m in Sources */,
+				6507B1C819E2BD1100107F34 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6507B1D719E2BD1100107F34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6507B1E219E2BD1100107F34 /* ViralSwitchDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6507B1DD19E2BD1100107F34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6507B1C119E2BD1000107F34 /* ViralSwitchDemo */;
+			targetProxy = 6507B1DC19E2BD1100107F34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6507B1CF19E2BD1100107F34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6507B1D019E2BD1100107F34 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6507B1D419E2BD1100107F34 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6507B1D519E2BD1100107F34 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6507B1E319E2BD1100107F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6507B1E419E2BD1100107F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6507B1E619E2BD1100107F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ViralSwitchDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6507B1E719E2BD1100107F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ViralSwitchDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6507B1E919E2BD1100107F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ViralSwitchDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViralSwitchDemo.app/ViralSwitchDemo";
+			};
+			name = Debug;
+		};
+		6507B1EA19E2BD1100107F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ViralSwitchDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViralSwitchDemo.app/ViralSwitchDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6507B1BD19E2BD1000107F34 /* Build configuration list for PBXProject "ViralSwitchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6507B1E319E2BD1100107F34 /* Debug */,
+				6507B1E419E2BD1100107F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6507B1E519E2BD1100107F34 /* Build configuration list for PBXNativeTarget "ViralSwitchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6507B1E619E2BD1100107F34 /* Debug */,
+				6507B1E719E2BD1100107F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6507B1E819E2BD1100107F34 /* Build configuration list for PBXNativeTarget "ViralSwitchDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6507B1E919E2BD1100107F34 /* Debug */,
+				6507B1EA19E2BD1100107F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6507B1BA19E2BD1000107F34 /* Project object */;
+}
