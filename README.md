@@ -7,8 +7,17 @@ UISwitch subclass that 'infects' the parent view with the `onTintColor` when the
 #Screenshot
 ![ViralSwitch](https://raw.githubusercontent.com/andreamazz/ViralSwitch/master/screenshot.gif)
 
-#TODO 
-- [ ] Everything
+#Installation
+Using cocoapods:
+`pod 'AMViralSwitch'`
+
+#Usage
+AMViralSwitch is a drop-in replacement of UISwitch. You just need to set the `onTintColor` property of the switch, and it will automatically _infect_ its superview with the selected color.
+
+#TODO  
+- [ ] Trigger animations on other views
+- [ ] Test
+- [ ] Add Travis CI
 
 #MIT License
 
