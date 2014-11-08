@@ -11,8 +11,12 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet AMViralSwitch *sw;
-@property (weak, nonatomic) IBOutlet UIView *sampleView;
+@property (weak, nonatomic) IBOutlet AMViralSwitch *blueSwitch;
+@property (weak, nonatomic) IBOutlet AMViralSwitch *greenSwitch;
+
+@property (weak, nonatomic) IBOutlet UIView *blueView;
+@property (weak, nonatomic) IBOutlet UIView *greenView;
+
 
 @end
 
@@ -20,21 +24,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.sw.animationElementsOn = @[
-                                  @{ AMElementView: self.sampleView.layer,
-                                     AMElementKeyPath: @"backgroundColor",
-                                     AMElementFromValue: (id)[UIColor colorWithRed:74.0/255.0 green:144.0/255.0 blue:226.0/255.0 alpha:1].CGColor,
-                                     AMElementToValue: (id)[UIColor whiteColor].CGColor }
-                                  ];
     
-    self.sw.animationElementsOff = @[
-                                  @{ AMElementView: self.sampleView.layer,
-                                     AMElementKeyPath: @"backgroundColor",
-                                     AMElementToValue: (id)[UIColor colorWithRed:74.0/255.0 green:144.0/255.0 blue:226.0/255.0 alpha:1].CGColor,
-                                     AMElementFromValue: (id)[UIColor whiteColor].CGColor }
-                                  ];
+    self.blueSwitch.animationElementsOn = @[
+                                            @{ AMElementView: self.blueView.layer,
+                                               AMElementKeyPath: @"backgroundColor",
+                                               AMElementFromValue: (id)[UIColor clearColor].CGColor,
+                                               AMElementToValue: (id)[UIColor whiteColor].CGColor }
+                                            ];
     
+    self.blueSwitch.animationElementsOff = @[
+                                             @{ AMElementView: self.blueView.layer,
+                                                AMElementKeyPath: @"backgroundColor",
+                                                AMElementFromValue: (id)[UIColor whiteColor].CGColor,
+                                                AMElementToValue: (id)[UIColor clearColor].CGColor }
+                                             ];
+    
+    
+    self.greenSwitch.animationElementsOn = @[
+                                             @{ AMElementView: self.greenView.layer,
+                                                AMElementKeyPath: @"backgroundColor",
+                                                AMElementFromValue: (id)[UIColor clearColor].CGColor,
+                                                AMElementToValue: (id)[UIColor whiteColor].CGColor }
+                                             ];
+    
+    self.greenSwitch.animationElementsOff = @[
+                                              @{ AMElementView: self.greenView.layer,
+                                                 AMElementKeyPath: @"backgroundColor",
+                                                 AMElementFromValue: (id)[UIColor whiteColor].CGColor,
+                                                 AMElementToValue: (id)[UIColor clearColor].CGColor }
+                                              ];
 }
 
 @end

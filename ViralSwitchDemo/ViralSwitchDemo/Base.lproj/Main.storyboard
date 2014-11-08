@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,35 +17,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yke-CT-eZm" customClass="AMViralSwitch">
-                                <rect key="frame" x="136" y="268" width="51" height="31"/>
-                                <color key="onTintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-v3-W5p">
-                                <rect key="frame" x="130" y="100" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.47843137250000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yke-CT-eZm" customClass="AMViralSwitch">
+                                        <rect key="frame" x="263" y="126" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                    </switch>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4d-Er-SEy">
+                                        <rect key="frame" x="8" y="117" width="247" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turning blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ8-Pn-04N">
+                                                <rect key="frame" x="76" y="13" width="95" height="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerY" secondItem="IZ8-Pn-04N" secondAttribute="centerY" id="DG1-jW-lQc"/>
+                                            <constraint firstAttribute="height" constant="50" id="igb-XP-KBo"/>
+                                            <constraint firstAttribute="centerX" secondItem="IZ8-Pn-04N" secondAttribute="centerX" id="vT5-RU-qDR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95563052398989901" green="0.95563052398989901" blue="0.95563052398989901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1t0-xc-c5U"/>
-                                    <constraint firstAttribute="width" constant="60" id="bp2-qE-NRX"/>
+                                    <constraint firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="85n-k4-Fjq"/>
+                                    <constraint firstItem="O4d-Er-SEy" firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="F4t-xk-PKe"/>
+                                    <constraint firstAttribute="trailing" secondItem="yke-CT-eZm" secondAttribute="trailing" constant="8" id="bDH-NU-2Ry"/>
+                                    <constraint firstItem="yke-CT-eZm" firstAttribute="leading" secondItem="O4d-Er-SEy" secondAttribute="trailing" constant="8" id="gcK-EP-eX6"/>
+                                    <constraint firstItem="O4d-Er-SEy" firstAttribute="leading" secondItem="FpN-v3-W5p" secondAttribute="leading" constant="8" id="rmD-PX-XU3"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-qh-fHz">
+                                <rect key="frame" x="0.0" y="284" width="320" height="284"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YS-VQ-nac" customClass="AMViralSwitch">
+                                        <rect key="frame" x="263" y="126" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.33750088800825684" green="0.8862745098" blue="0.20171471297601709" alpha="1" colorSpace="calibratedRGB"/>
+                                    </switch>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipx-l4-JZX">
+                                        <rect key="frame" x="8" y="117" width="247" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turning green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-xQ-vuD">
+                                                <rect key="frame" x="70" y="13" width="106" height="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Lhh-9N-UnT"/>
+                                            <constraint firstAttribute="centerY" secondItem="Wlf-xQ-vuD" secondAttribute="centerY" id="fiT-aN-QAT"/>
+                                            <constraint firstAttribute="centerX" secondItem="Wlf-xQ-vuD" secondAttribute="centerX" id="qwY-yU-XFh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7YS-VQ-nac" firstAttribute="leading" secondItem="ipx-l4-JZX" secondAttribute="trailing" constant="8" id="Fu4-Jo-dCR"/>
+                                    <constraint firstItem="ipx-l4-JZX" firstAttribute="leading" secondItem="MSy-qh-fHz" secondAttribute="leading" constant="8" id="POH-SV-Lgu"/>
+                                    <constraint firstAttribute="trailing" secondItem="7YS-VQ-nac" secondAttribute="trailing" constant="8" id="cgg-bG-kBU"/>
+                                    <constraint firstItem="ipx-l4-JZX" firstAttribute="centerY" secondItem="7YS-VQ-nac" secondAttribute="centerY" id="oN4-M1-zQd"/>
+                                    <constraint firstAttribute="centerY" secondItem="7YS-VQ-nac" secondAttribute="centerY" id="tYh-DE-PKz"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="FpN-v3-W5p" secondAttribute="centerX" id="0g7-1V-dgT"/>
-                            <constraint firstItem="FpN-v3-W5p" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="Fiq-sI-7MK"/>
-                            <constraint firstAttribute="centerX" secondItem="yke-CT-eZm" secondAttribute="centerX" id="mti-Kt-Ptf"/>
-                            <constraint firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="x2T-eJ-8zD"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="MSy-qh-fHz" secondAttribute="bottom" id="EHc-KD-tKn"/>
+                            <constraint firstAttribute="trailing" secondItem="FpN-v3-W5p" secondAttribute="trailing" id="Rah-8B-dm4"/>
+                            <constraint firstItem="FpN-v3-W5p" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cmc-EP-mao"/>
+                            <constraint firstItem="MSy-qh-fHz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="eg5-xC-3yv"/>
+                            <constraint firstAttribute="trailing" secondItem="MSy-qh-fHz" secondAttribute="trailing" id="kBO-F7-CIh"/>
+                            <constraint firstItem="FpN-v3-W5p" firstAttribute="height" secondItem="MSy-qh-fHz" secondAttribute="height" id="keh-jQ-he9"/>
+                            <constraint firstItem="FpN-v3-W5p" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="o49-uf-uNA"/>
+                            <constraint firstItem="MSy-qh-fHz" firstAttribute="top" secondItem="FpN-v3-W5p" secondAttribute="bottom" id="vDd-uW-Ee0"/>
+                            <constraint firstItem="MSy-qh-fHz" firstAttribute="top" secondItem="FpN-v3-W5p" secondAttribute="bottom" id="wYn-ND-Xu9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sampleView" destination="FpN-v3-W5p" id="zRK-w6-WhE"/>
-                        <outlet property="sw" destination="yke-CT-eZm" id="Gxz-fY-6Qk"/>
+                        <outlet property="blueSwitch" destination="yke-CT-eZm" id="91n-Hy-0HJ"/>
+                        <outlet property="blueView" destination="O4d-Er-SEy" id="aqm-XY-kcJ"/>
+                        <outlet property="greenSwitch" destination="7YS-VQ-nac" id="xxd-eO-FUq"/>
+                        <outlet property="greenView" destination="ipx-l4-JZX" id="CRe-bk-bRt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
