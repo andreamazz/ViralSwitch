@@ -77,6 +77,14 @@ NSString *const AMElementToValue = @"AMElementToValue";
                                     [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
                                 }
                                 completion:nil];
+            } else if ([element[AMElementKeyPath] isEqualToString:@"tintColor"] && [element[AMElementView] isKindOfClass:[UIButton class]]) {
+                [UIView transitionWithView:element[AMElementView]
+                                  duration:kDURATION
+                                   options:UIViewAnimationOptionTransitionNone
+                                animations:^{
+                                    [(UIButton *)element[AMElementView] setTintColor:element[AMElementToValue]];
+                                }
+                                completion:nil];
             } else {
                 CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
                                                                 fromValue:element[AMElementFromValue]
@@ -108,6 +116,14 @@ NSString *const AMElementToValue = @"AMElementToValue";
                                    options:UIViewAnimationOptionTransitionCrossDissolve
                                 animations:^{
                                     [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
+                                }
+                                completion:nil];
+            } else if ([element[AMElementKeyPath] isEqualToString:@"tintColor"] && [element[AMElementView] isKindOfClass:[UIButton class]]) {
+                [UIView transitionWithView:element[AMElementView]
+                                  duration:kDURATION
+                                   options:UIViewAnimationOptionTransitionNone
+                                animations:^{
+                                    [(UIButton *)element[AMElementView] setTintColor:element[AMElementToValue]];
                                 }
                                 completion:nil];
             } else {
