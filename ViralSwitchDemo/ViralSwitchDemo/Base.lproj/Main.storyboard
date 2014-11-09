@@ -24,36 +24,19 @@
                                         <rect key="frame" x="263" y="126" width="51" height="31"/>
                                         <color key="onTintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4d-Er-SEy">
-                                        <rect key="frame" x="20" y="127" width="223" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turning blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ8-Pn-04N">
-                                                <rect key="frame" x="63" y="3" width="98" height="24"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="centerY" secondItem="IZ8-Pn-04N" secondAttribute="centerY" id="DG1-jW-lQc"/>
-                                            <constraint firstAttribute="height" constant="30" id="igb-XP-KBo"/>
-                                            <constraint firstAttribute="centerX" secondItem="IZ8-Pn-04N" secondAttribute="centerX" id="vT5-RU-qDR"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turning blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ8-Pn-04N">
+                                        <rect key="frame" x="111" y="130" width="98" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95563052398989901" green="0.95563052398989901" blue="0.95563052398989901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="85n-k4-Fjq"/>
-                                    <constraint firstItem="O4d-Er-SEy" firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="F4t-xk-PKe"/>
+                                    <constraint firstItem="IZ8-Pn-04N" firstAttribute="centerY" secondItem="yke-CT-eZm" secondAttribute="centerY" id="H7B-Cp-jGV"/>
                                     <constraint firstAttribute="trailing" secondItem="yke-CT-eZm" secondAttribute="trailing" constant="8" id="bDH-NU-2Ry"/>
-                                    <constraint firstItem="yke-CT-eZm" firstAttribute="leading" secondItem="O4d-Er-SEy" secondAttribute="trailing" constant="20" id="gcK-EP-eX6"/>
-                                    <constraint firstItem="O4d-Er-SEy" firstAttribute="leading" secondItem="FpN-v3-W5p" secondAttribute="leading" constant="20" id="rmD-PX-XU3"/>
+                                    <constraint firstAttribute="centerX" secondItem="IZ8-Pn-04N" secondAttribute="centerX" id="qm3-2x-fq0"/>
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-qh-fHz">
@@ -110,8 +93,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blueLabel" destination="IZ8-Pn-04N" id="6x5-cL-7jM"/>
                         <outlet property="blueSwitch" destination="yke-CT-eZm" id="91n-Hy-0HJ"/>
-                        <outlet property="blueView" destination="O4d-Er-SEy" id="aqm-XY-kcJ"/>
                         <outlet property="greenSwitch" destination="7YS-VQ-nac" id="xxd-eO-FUq"/>
                         <outlet property="greenView" destination="ipx-l4-JZX" id="CRe-bk-bRt"/>
                     </connections>

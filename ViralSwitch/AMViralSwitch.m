@@ -69,11 +69,21 @@ NSString *const AMElementToValue = @"AMElementToValue";
         [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
         
         for (NSDictionary *element in self.animationElementsOn) {
-            CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
-                                                            fromValue:element[AMElementFromValue]
-                                                              toValue:element[AMElementToValue]
-                                                               timing:kCAMediaTimingFunctionEaseIn];
-            [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+            if ([element[AMElementKeyPath] isEqualToString:@"textColor"] && [element[AMElementView] isKindOfClass:[UILabel class]]) {
+                [UIView transitionWithView:element[AMElementView]
+                                  duration:kDURATION
+                                   options:UIViewAnimationOptionTransitionCrossDissolve
+                                animations:^{
+                                    [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
+                                }
+                                completion:nil];
+            } else {
+                CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
+                                                                fromValue:element[AMElementFromValue]
+                                                                  toValue:element[AMElementToValue]
+                                                                   timing:kCAMediaTimingFunctionEaseIn];
+                [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+            }
         }
         
     } else {
@@ -92,11 +102,21 @@ NSString *const AMElementToValue = @"AMElementToValue";
         [self.layer addAnimation:borderAnimation forKey:@"borderDown"];
         
         for (NSDictionary *element in self.animationElementsOff) {
-            CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
-                                                            fromValue:element[AMElementFromValue]
-                                                              toValue:element[AMElementToValue]
-                                                               timing:kCAMediaTimingFunctionEaseIn];
-            [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+            if ([element[AMElementKeyPath] isEqualToString:@"textColor"] && [element[AMElementView] isKindOfClass:[UILabel class]]) {
+                [UIView transitionWithView:element[AMElementView]
+                                  duration:kDURATION
+                                   options:UIViewAnimationOptionTransitionCrossDissolve
+                                animations:^{
+                                    [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
+                                }
+                                completion:nil];
+            } else {
+                CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
+                                                                fromValue:element[AMElementFromValue]
+                                                                  toValue:element[AMElementToValue]
+                                                                   timing:kCAMediaTimingFunctionEaseIn];
+                [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+            }
         }
 
     }

@@ -14,9 +14,8 @@
 @property (weak, nonatomic) IBOutlet AMViralSwitch *blueSwitch;
 @property (weak, nonatomic) IBOutlet AMViralSwitch *greenSwitch;
 
-@property (weak, nonatomic) IBOutlet UIView *blueView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
-
+@property (weak, nonatomic) IBOutlet UILabel *blueLabel;
 
 @end
 
@@ -26,19 +25,16 @@
     [super viewDidLoad];
     
     self.blueSwitch.animationElementsOn = @[
-                                            @{ AMElementView: self.blueView.layer,
-                                               AMElementKeyPath: @"backgroundColor",
-                                               AMElementFromValue: (id)[UIColor clearColor].CGColor,
-                                               AMElementToValue: (id)[UIColor whiteColor].CGColor }
+                                            @{ AMElementView: self.blueLabel,
+                                               AMElementKeyPath: @"textColor",
+                                               AMElementToValue: [UIColor whiteColor] }
                                             ];
     
     self.blueSwitch.animationElementsOff = @[
-                                             @{ AMElementView: self.blueView.layer,
-                                                AMElementKeyPath: @"backgroundColor",
-                                                AMElementFromValue: (id)[UIColor whiteColor].CGColor,
-                                                AMElementToValue: (id)[UIColor clearColor].CGColor }
-                                             ];
-    
+                                            @{ AMElementView: self.blueLabel,
+                                               AMElementKeyPath: @"textColor",
+                                               AMElementToValue: [UIColor blackColor] }
+                                            ];
     
     self.greenSwitch.animationElementsOn = @[
                                              @{ AMElementView: self.greenView.layer,
