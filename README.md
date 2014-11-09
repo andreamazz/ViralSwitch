@@ -33,6 +33,16 @@ self.blueSwitch.animationElementsOn = @[
        AMElementToValue: [UIColor whiteColor] }
 ];
 ```
+Follow the same principle to animate the `tintColor` of your `UIButton`s:
+```objc
+self.blueSwitch.animationElementsOn = @[
+    @{ AMElementView: self.infoButton,
+       AMElementKeyPath: @"tintColor",
+       AMElementToValue: [UIColor whiteColor] }
+];
+```
+
+
 
 #TODO  
 - [ ] Trigger animations on other views
