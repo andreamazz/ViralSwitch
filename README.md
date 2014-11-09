@@ -14,6 +14,26 @@ Using cocoapods:
 #Usage
 AMViralSwitch is a drop-in replacement of UISwitch. You just need to set the `onTintColor` property of the switch, and it will automatically _infect_ its superview with the selected color.
 
+#Animate views
+You can animate other views alongside the switch _infection_. Tipically you'll want to change color to views or labels that are inside the same superview. You can animate CoreAnimation properties likes this: 
+```objc
+self.greenSwitch.animationElementsOn = @[
+   @{ AMElementView: self.greenView.layer,
+      AMElementKeyPath: @"backgroundColor", 
+      AMElementFromValue: (id)[UIColor clearColor].CGColor,
+      AMElementToValue: (id)[UIColor whiteColor].CGColor }
+];
+```
+
+To animate the `textColor` of an `UILabel` the syntax is slightly different:
+```objc
+self.blueSwitch.animationElementsOn = @[
+    @{ AMElementView: self.blueLabel,
+       AMElementKeyPath: @"textColor",
+       AMElementToValue: [UIColor whiteColor] }
+];
+```
+
 #TODO  
 - [ ] Trigger animations on other views
 - [ ] Test
