@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UILabel *blueLabel;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @end
 
@@ -27,12 +28,18 @@
     self.blueSwitch.animationElementsOn = @[
                                             @{ AMElementView: self.blueLabel,
                                                AMElementKeyPath: @"textColor",
+                                               AMElementToValue: [UIColor whiteColor] },
+                                            @{ AMElementView: self.infoButton,
+                                               AMElementKeyPath: @"tintColor",
                                                AMElementToValue: [UIColor whiteColor] }
                                             ];
     
     self.blueSwitch.animationElementsOff = @[
                                             @{ AMElementView: self.blueLabel,
                                                AMElementKeyPath: @"textColor",
+                                               AMElementToValue: [UIColor blackColor] },
+                                            @{ AMElementView: self.infoButton,
+                                               AMElementKeyPath: @"tintColor",
                                                AMElementToValue: [UIColor blackColor] }
                                             ];
     
