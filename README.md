@@ -45,7 +45,6 @@ self.blueSwitch.animationElementsOn = @[
 
 
 #TODO  
-- [ ] Trigger animations on other views
 - [ ] Test
 - [ ] Add Travis CI
 
