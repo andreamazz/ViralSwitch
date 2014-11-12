@@ -131,9 +131,4 @@ NSString *const AMElementToValue = @"AMElementToValue";
     return animation;
 }
 
-- (void)dealloc
-{
-    [self.shape removeObserver:self forKeyPath:@"transform.scale"];
-}
-
 @end
