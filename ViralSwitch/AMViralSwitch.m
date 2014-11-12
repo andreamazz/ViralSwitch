@@ -42,7 +42,6 @@ NSString *const AMElementToValue = @"AMElementToValue";
     self.shape = [CAShapeLayer layer];
     self.shape.fillColor = self.onTintColor.CGColor;
     self.shape.transform = CATransform3DMakeScale(0.0001, 0.0001, 0.0001);
-    
     [self.superview.layer insertSublayer:self.shape below:self.layer];
     
     self.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -68,31 +67,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@0 toValue:@1 timing:kCAMediaTimingFunctionEaseIn];
         [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
         
-        for (NSDictionary *element in self.animationElementsOn) {
-            if ([element[AMElementKeyPath] isEqualToString:@"textColor"] && [element[AMElementView] isKindOfClass:[UILabel class]]) {
-                [UIView transitionWithView:element[AMElementView]
-                                  duration:kDURATION
-                                   options:UIViewAnimationOptionTransitionCrossDissolve
-                                animations:^{
-                                    [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
-                                }
-                                completion:nil];
-            } else if ([element[AMElementKeyPath] isEqualToString:@"tintColor"] && [element[AMElementView] isKindOfClass:[UIButton class]]) {
-                [UIView transitionWithView:element[AMElementView]
-                                  duration:kDURATION
-                                   options:UIViewAnimationOptionTransitionNone
-                                animations:^{
-                                    [(UIButton *)element[AMElementView] setTintColor:element[AMElementToValue]];
-                                }
-                                completion:nil];
-            } else {
-                CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
-                                                                fromValue:element[AMElementFromValue]
-                                                                  toValue:element[AMElementToValue]
-                                                                   timing:kCAMediaTimingFunctionEaseIn];
-                [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
-            }
-        }
+        [self animateElementsFrom:self.animationElementsOn];
         
     } else {
         // Reset
@@ -109,32 +84,37 @@ NSString *const AMElementToValue = @"AMElementToValue";
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@1 toValue:@0 timing:kCAMediaTimingFunctionEaseOut];
         [self.layer addAnimation:borderAnimation forKey:@"borderDown"];
         
-        for (NSDictionary *element in self.animationElementsOff) {
-            if ([element[AMElementKeyPath] isEqualToString:@"textColor"] && [element[AMElementView] isKindOfClass:[UILabel class]]) {
-                [UIView transitionWithView:element[AMElementView]
-                                  duration:kDURATION
-                                   options:UIViewAnimationOptionTransitionCrossDissolve
-                                animations:^{
-                                    [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
-                                }
-                                completion:nil];
-            } else if ([element[AMElementKeyPath] isEqualToString:@"tintColor"] && [element[AMElementView] isKindOfClass:[UIButton class]]) {
-                [UIView transitionWithView:element[AMElementView]
-                                  duration:kDURATION
-                                   options:UIViewAnimationOptionTransitionNone
-                                animations:^{
-                                    [(UIButton *)element[AMElementView] setTintColor:element[AMElementToValue]];
-                                }
-                                completion:nil];
-            } else {
-                CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
-                                                                fromValue:element[AMElementFromValue]
-                                                                  toValue:element[AMElementToValue]
-                                                                   timing:kCAMediaTimingFunctionEaseIn];
-                [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
-            }
-        }
+        [self animateElementsFrom:self.animationElementsOff];
 
+    }
+}
+
+- (void)animateElementsFrom:(NSArray *)elements
+{
+    for (NSDictionary *element in elements) {
+        if ([element[AMElementKeyPath] isEqualToString:@"textColor"] && [element[AMElementView] isKindOfClass:[UILabel class]]) {
+            [UIView transitionWithView:element[AMElementView]
+                              duration:kDURATION
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
+                                [(UILabel *)element[AMElementView] setTextColor:element[AMElementToValue]];
+                            }
+                            completion:nil];
+        } else if ([element[AMElementKeyPath] isEqualToString:@"tintColor"] && [element[AMElementView] isKindOfClass:[UIButton class]]) {
+            [UIView transitionWithView:element[AMElementView]
+                              duration:kDURATION
+                               options:UIViewAnimationOptionTransitionNone
+                            animations:^{
+                                [(UIButton *)element[AMElementView] setTintColor:element[AMElementToValue]];
+                            }
+                            completion:nil];
+        } else {
+            CABasicAnimation *elementAnimation = [self animateKeyPath:element[AMElementKeyPath]
+                                                            fromValue:element[AMElementFromValue]
+                                                              toValue:element[AMElementToValue]
+                                                               timing:kCAMediaTimingFunctionEaseIn];
+            [element[AMElementView] addAnimation:elementAnimation forKey:element[AMElementKeyPath]];
+        }
     }
 }
 
@@ -149,6 +129,11 @@ NSString *const AMElementToValue = @"AMElementToValue";
     animation.fillMode = kCAFillModeForwards;
     animation.duration = kDURATION;
     return animation;
+}
+
+- (void)dealloc
+{
+    [self.shape removeObserver:self forKeyPath:@"transform.scale"];
 }
 
 @end
