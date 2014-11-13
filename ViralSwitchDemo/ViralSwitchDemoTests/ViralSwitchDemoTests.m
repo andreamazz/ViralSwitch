@@ -6,35 +6,46 @@
 //  Copyright (c) 2014 Fancy Pixel. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
+#define EXP_SHORTHAND
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
+#import <Expecta+Snapshots/EXPMatchers+FBSnapshotTest.h>
 
-@interface ViralSwitchDemoTests : XCTestCase
+#import "AMViralSwitch.h"
 
-@end
+SpecBegin(ViralSwitchDemoTests)
 
-@implementation ViralSwitchDemoTests
+#define kRECORD     NO
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
+describe(@"AMViralSwitch", ^{
+    
+    it(@"SwitchOn", ^{
+        UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+        UIViewController *controller = [[UIViewController alloc] init];
+        
+        window.rootViewController = controller;
+        expect(controller.view).willNot.beNil();
+        controller.view.backgroundColor = [UIColor whiteColor];
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
+        [window makeKeyAndVisible];
+        
+        AMViralSwitch *viralSwitch = [[AMViralSwitch alloc] init];
+        viralSwitch.frame = CGRectMake(controller.view.frame.size.width / 2 - viralSwitch.frame.size.width / 2, controller.view.frame.size.height / 2 - viralSwitch.frame.size.height / 2, viralSwitch.frame.size.width, viralSwitch.frame.size.height);
+        viralSwitch.onTintColor = [UIColor redColor];
+        [controller.view addSubview:viralSwitch];
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+        [viralSwitch awakeFromNib];
+        
+        if (kRECORD) expect(controller.view).will.recordSnapshotNamed(@"SwitchOff");
+        expect(controller.view).will.haveValidSnapshotNamed(@"SwitchOff");
 
-@end
+        viralSwitch.on = YES;
+        
+        if (kRECORD) expect(controller.view).will.recordSnapshotNamed(@"SwitchOn");
+        expect(controller.view).will.haveValidSnapshotNamed(@"SwitchOn");
+        
+    });
+});
+
+SpecEnd

@@ -1,6 +1,9 @@
 ViralSwitch
 ========
 
+[![Build Status](https://travis-ci.org/andreamazz/AMViralSwitch.png?style=flat)](https://travis-ci.org/andreamazz/ViralSwitch)
+[![Cocoapods](https://cocoapod-badges.herokuapp.com/v/AMViralSwitch/badge.png?style=flat)](http://cocoapods.org/?q=amviralswitch)
+
 UISwitch subclass that 'infects' the parent view with the `onTintColor` when the switch is turned on. Inspired by [this Dribble](https://dribbble.com/shots/1749645-Contact-Sync) by [Ramotion](https://dribbble.com/teams/Ramotion).
 
 

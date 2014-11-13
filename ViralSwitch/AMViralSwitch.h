@@ -18,5 +18,7 @@ FOUNDATION_EXPORT NSString *const AMElementToValue;
 @property (nonatomic, assign) NSTimeInterval animationDuration UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) NSArray *animationElementsOn;
 @property (nonatomic, strong) NSArray *animationElementsOff;
+@property (nonatomic, copy) void (^completionOn)();
+@property (nonatomic, copy) void (^completionOff)();
 
 @end

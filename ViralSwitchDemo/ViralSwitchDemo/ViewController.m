@@ -25,6 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.blueSwitch.completionOn = ^{
+        NSLog(@"Animation On");
+    };
+    
+    self.blueSwitch.completionOff = ^{
+        NSLog(@"Animation Off");
+    };
+    
     self.blueSwitch.animationElementsOn = @[
                                             @{ AMElementView: self.blueLabel,
                                                AMElementKeyPath: @"textColor",

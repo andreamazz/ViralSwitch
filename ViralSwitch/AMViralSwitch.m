@@ -47,12 +47,23 @@ NSString *const AMElementToValue = @"AMElementToValue";
     self.layer.borderColor = [UIColor whiteColor].CGColor;
     self.layer.cornerRadius = self.frame.size.height / 2;
     
+    [self addObserver:self forKeyPath:@"on" options:(NSKeyValueObservingOptionNew) context:nil];
     [self addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self switchChanged:self];
 }
 
 - (void)switchChanged:(UISwitch *)sender
 {
     if (sender.on) {
+        [CATransaction begin];
+        if (self.completionOn) {
+            [CATransaction setCompletionBlock:self.completionOn];
+        }
+        
         // Reset
         [self.shape removeAnimationForKey:@"scaleDown"];
         [self.shape removeAnimationForKey:@"borderDown"];
@@ -66,10 +77,16 @@ NSString *const AMElementToValue = @"AMElementToValue";
         
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@0 toValue:@1 timing:kCAMediaTimingFunctionEaseIn];
         [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
-        
+
         [self animateElementsFrom:self.animationElementsOn];
+        [CATransaction commit];
         
     } else {
+        [CATransaction begin];
+        if (self.completionOff) {
+            [CATransaction setCompletionBlock:self.completionOff];
+        }
+        
         // Reset
         [self.shape removeAnimationForKey:@"scaleUp"];
         [self.shape removeAnimationForKey:@"borderUp"];
@@ -85,6 +102,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
         [self.layer addAnimation:borderAnimation forKey:@"borderDown"];
         
         [self animateElementsFrom:self.animationElementsOff];
+        [CATransaction commit];
 
     }
 }
@@ -129,6 +147,11 @@ NSString *const AMElementToValue = @"AMElementToValue";
     animation.fillMode = kCAFillModeForwards;
     animation.duration = kDURATION;
     return animation;
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"on"];
 }
 
 @end
