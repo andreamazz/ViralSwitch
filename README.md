@@ -1,5 +1,6 @@
-ViralSwitch
-========
+<p align="center">
+  <img width="640" height="240" src="assets/logo.png"/>
+</p>
 
 [![Build Status](https://travis-ci.org/andreamazz/ViralSwitch.png)](https://travis-ci.org/andreamazz/ViralSwitch)
 [![Cocoapods](https://cocoapod-badges.herokuapp.com/v/AMViralSwitch/badge.png?style=flat)](http://cocoapods.org/?q=amviralswitch)
@@ -8,7 +9,7 @@ UISwitch subclass that 'infects' the parent view with the `onTintColor` when the
 
 
 #Screenshot
-![ViralSwitch](https://raw.githubusercontent.com/andreamazz/ViralSwitch/master/screenshot.gif)
+![ViralSwitch](https://raw.githubusercontent.com/andreamazz/ViralSwitch/master/assets/screenshot.gif)
 
 #Installation
 Using cocoapods:
