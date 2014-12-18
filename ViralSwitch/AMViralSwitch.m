@@ -37,7 +37,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
     self.shape.path = [UIBezierPath bezierPathWithOvalInRect:(CGRect){0, 0, self.radius * 2, self.radius * 2}].CGPath;
 }
 
-- (void)awakeFromNib
+- (void)didMoveToSuperview
 {
     self.shape = [CAShapeLayer layer];
     self.shape.fillColor = self.onTintColor.CGColor;
