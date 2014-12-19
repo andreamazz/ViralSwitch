@@ -19,6 +19,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
 
 @property (nonatomic, strong) CAShapeLayer *shape;
 @property (nonatomic, assign) CGFloat radius;
+@property (nonatomic, assign) BOOL infected;
 
 @end
 
@@ -32,7 +33,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
     self.radius = sqrt(x*x + y*y);
     
     self.shape.frame = (CGRect){CGRectGetMidX(self.frame) - self.radius,
-                                 CGRectGetMidY(self.frame) - self.radius, self.radius * 2, self.radius * 2};
+        CGRectGetMidY(self.frame) - self.radius, self.radius * 2, self.radius * 2};
     self.shape.anchorPoint = CGPointMake(0.5, 0.5);
     self.shape.path = [UIBezierPath bezierPathWithOvalInRect:(CGRect){0, 0, self.radius * 2, self.radius * 2}].CGPath;
 }
@@ -42,23 +43,25 @@ NSString *const AMElementToValue = @"AMElementToValue";
     self.shape = [CAShapeLayer layer];
     self.shape.fillColor = self.onTintColor.CGColor;
     self.shape.transform = CATransform3DMakeScale(0.0001, 0.0001, 0.0001);
-    [self.superview.layer insertSublayer:self.shape atIndex:0];
+    [self.superview.layer insertSublayer:self.shape below:self.layer];
     
     self.layer.borderColor = [UIColor whiteColor].CGColor;
     self.layer.cornerRadius = self.frame.size.height / 2;
     
-    [self addObserver:self forKeyPath:@"on" options:(NSKeyValueObservingOptionNew) context:nil];
     [self addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)setOn:(BOOL)on animated:(BOOL)animated
 {
-    [self switchChanged:self];
+    BOOL old = self.on;
+    [super setOn:on animated:animated];
+    if (self.on != old)
+        [self switchChanged:self];
 }
 
 - (void)switchChanged:(UISwitch *)sender
 {
-    if (sender.on) {
+    if (sender.on && !_infected) {
         [CATransaction begin];
         if (self.completionOn) {
             [CATransaction setCompletionBlock:self.completionOn];
@@ -77,11 +80,12 @@ NSString *const AMElementToValue = @"AMElementToValue";
         
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@0 toValue:@1 timing:kCAMediaTimingFunctionEaseIn];
         [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
-
+        
         [self animateElementsFrom:self.animationElementsOn];
         [CATransaction commit];
+        _infected = YES;
         
-    } else {
+    } else if (!sender.on && _infected) {
         [CATransaction begin];
         if (self.completionOff) {
             [CATransaction setCompletionBlock:self.completionOff];
@@ -91,7 +95,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
         [self.shape removeAnimationForKey:@"scaleUp"];
         [self.shape removeAnimationForKey:@"borderUp"];
         self.layer.borderWidth = 1;
-
+        
         CABasicAnimation *scaleAnimation = [self animateKeyPath:@"transform.scale"
                                                       fromValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)]
                                                         toValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.0001, 0.0001, 0.0001)]
@@ -103,7 +107,8 @@ NSString *const AMElementToValue = @"AMElementToValue";
         
         [self animateElementsFrom:self.animationElementsOff];
         [CATransaction commit];
-
+        _infected = NO;
+        
     }
 }
 
