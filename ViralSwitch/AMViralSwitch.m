@@ -42,7 +42,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
     self.shape = [CAShapeLayer layer];
     self.shape.fillColor = self.onTintColor.CGColor;
     self.shape.transform = CATransform3DMakeScale(0.0001, 0.0001, 0.0001);
-    [self.superview.layer insertSublayer:self.shape below:self.layer];
+    [self.superview.layer insertSublayer:self.shape atIndex:0];
     
     self.layer.borderColor = [UIColor whiteColor].CGColor;
     self.layer.cornerRadius = self.frame.size.height / 2;
