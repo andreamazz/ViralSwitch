@@ -56,6 +56,12 @@ NSString *const AMElementToValue = @"AMElementToValue";
     [self switchChanged:self];
 }
 
+- (void)setOn:(BOOL)on animated:(BOOL)animated
+{
+    [super setOn:on animated:animated];
+    [self switchChanged:self];
+}
+
 - (void)switchChanged:(UISwitch *)sender
 {
     if (sender.on) {
