@@ -39,6 +39,8 @@ NSString *const AMElementToValue = @"AMElementToValue";
 
 - (void)didMoveToSuperview
 {
+    [self.superview setClipsToBounds:YES];
+    
     self.shape = [CAShapeLayer layer];
     self.shape.fillColor = self.onTintColor.CGColor;
     self.shape.transform = CATransform3DMakeScale(0.0001, 0.0001, 0.0001);
