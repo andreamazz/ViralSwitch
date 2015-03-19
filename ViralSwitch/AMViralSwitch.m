@@ -48,8 +48,10 @@ NSString *const AMElementToValue = @"AMElementToValue";
     
     self.layer.borderColor = [UIColor whiteColor].CGColor;
     self.layer.cornerRadius = self.frame.size.height / 2;
-    
-    [self addObserver:self forKeyPath:@"on" options:(NSKeyValueObservingOptionNew) context:nil];
+
+    if (self.superview) {
+        [self addObserver:self forKeyPath:@"on" options:(NSKeyValueObservingOptionNew) context:nil];
+    }
     [self addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
