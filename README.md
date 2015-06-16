@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/andreamazz/ViralSwitch.png)](https://travis-ci.org/andreamazz/ViralSwitch)
 [![Cocoapods](https://cocoapod-badges.herokuapp.com/v/AMViralSwitch/badge.png?style=flat)](http://cocoapods.org/?q=amviralswitch)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 UISwitch subclass that 'infects' the parent view with the `onTintColor` when the switch is turned on. Inspired by [this Dribble](https://dribbble.com/shots/1749645-Contact-Sync) by [Ramotion](https://dribbble.com/teams/Ramotion).
 
@@ -12,14 +13,23 @@ UISwitch subclass that 'infects' the parent view with the `onTintColor` when the
 ![ViralSwitch](https://raw.githubusercontent.com/andreamazz/ViralSwitch/master/assets/screenshot.gif)
 
 #Installation
-Using cocoapods:
-`pod 'AMViralSwitch'`
+
+##Using cocoapods:
+```
+pod 'AMViralSwitch'
+```
+
+##Using Carthage:
+```
+github "andreamazz/ViralSwitch"
+```
 
 #Usage
 AMViralSwitch is a drop-in replacement of UISwitch. You just need to set the `onTintColor` property of the switch, and it will automatically _infect_ its superview with the selected color.
 
 #Animate views
 You can animate other views alongside the switch _infection_. Typically you'll want to change color to views or labels that are inside the same superview. You can animate CoreAnimation properties likes this: 
+
 ```objc
 self.greenSwitch.animationElementsOn = @[
    @{ AMElementView: self.greenView.layer,
@@ -45,9 +55,6 @@ self.blueSwitch.animationElementsOn = @[
        AMElementToValue: [UIColor whiteColor] }
 ];
 ```
-
-#TODO  
-- [ ] Animate other views on 'collision'
 
 #MIT License
 
