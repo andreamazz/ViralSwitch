@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author       = { "Andrea Mazzini" => "andrea.mazzini@gmail.com" }
   s.source       = { :git => "https://github.com/andreamazz/ViralSwitch.git", :tag => '0.2.5' }
   s.platform     = :ios, '7.0'
-  s.source_files = 'ViralSwitch', '*.{h,m}'
+  s.source_files = 'Source', '*.{h,m}'
   s.requires_arc = true
   s.social_media_url = 'https://twitter.com/theandreamazz'
 end

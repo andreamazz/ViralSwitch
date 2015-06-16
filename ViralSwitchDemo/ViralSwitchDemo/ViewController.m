@@ -24,15 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.blueSwitch.completionOn = ^{
         NSLog(@"Animation On");
     };
-    
+
     self.blueSwitch.completionOff = ^{
         NSLog(@"Animation Off");
     };
-    
+
     self.blueSwitch.animationElementsOn = @[
                                             @{ AMElementView: self.blueLabel,
                                                AMElementKeyPath: @"textColor",
@@ -41,23 +41,23 @@
                                                AMElementKeyPath: @"tintColor",
                                                AMElementToValue: [UIColor whiteColor] }
                                             ];
-    
+
     self.blueSwitch.animationElementsOff = @[
-                                            @{ AMElementView: self.blueLabel,
-                                               AMElementKeyPath: @"textColor",
-                                               AMElementToValue: [UIColor blackColor] },
-                                            @{ AMElementView: self.infoButton,
-                                               AMElementKeyPath: @"tintColor",
-                                               AMElementToValue: [UIColor blackColor] }
-                                            ];
-    
+                                             @{ AMElementView: self.blueLabel,
+                                                AMElementKeyPath: @"textColor",
+                                                AMElementToValue: [UIColor blackColor] },
+                                             @{ AMElementView: self.infoButton,
+                                                AMElementKeyPath: @"tintColor",
+                                                AMElementToValue: [UIColor blackColor] }
+                                             ];
+
     self.greenSwitch.animationElementsOn = @[
                                              @{ AMElementView: self.greenView.layer,
                                                 AMElementKeyPath: @"backgroundColor",
                                                 AMElementFromValue: (id)[UIColor clearColor].CGColor,
                                                 AMElementToValue: (id)[UIColor whiteColor].CGColor }
                                              ];
-    
+
     self.greenSwitch.animationElementsOff = @[
                                               @{ AMElementView: self.greenView.layer,
                                                  AMElementKeyPath: @"backgroundColor",

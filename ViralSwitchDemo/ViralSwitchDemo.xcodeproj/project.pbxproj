@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6504432A19E2BD9500406B3F /* AMViralSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6504432919E2BD9500406B3F /* AMViralSwitch.m */; };
 		6507B1C819E2BD1100107F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1C719E2BD1100107F34 /* main.m */; };
 		6507B1CB19E2BD1100107F34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1CA19E2BD1100107F34 /* AppDelegate.m */; };
 		6507B1CE19E2BD1100107F34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1CD19E2BD1100107F34 /* ViewController.m */; };
@@ -15,6 +14,7 @@
 		6507B1D319E2BD1100107F34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6507B1D219E2BD1100107F34 /* Images.xcassets */; };
 		6507B1D619E2BD1100107F34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6507B1D419E2BD1100107F34 /* LaunchScreen.xib */; };
 		6507B1E219E2BD1100107F34 /* ViralSwitchDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6507B1E119E2BD1100107F34 /* ViralSwitchDemoTests.m */; };
+		658650F71B2FFAF000FC1345 /* AMViralSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 658650F61B2FFAF000FC1345 /* AMViralSwitch.m */; };
 		B6D0319F7C0B244B1B1C0850 /* libPods-ViralSwitchDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 332F88F4C085BC647409080D /* libPods-ViralSwitchDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,6 @@
 /* Begin PBXFileReference section */
 		10A84E52607104E03CDD40FA /* Pods-ViralSwitchDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViralSwitchDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViralSwitchDemoTests/Pods-ViralSwitchDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		332F88F4C085BC647409080D /* libPods-ViralSwitchDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViralSwitchDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6504432819E2BD9500406B3F /* AMViralSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMViralSwitch.h; sourceTree = "<group>"; };
-		6504432919E2BD9500406B3F /* AMViralSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMViralSwitch.m; sourceTree = "<group>"; };
 		6507B1C219E2BD1000107F34 /* ViralSwitchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViralSwitchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6507B1C619E2BD1100107F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6507B1C719E2BD1100107F34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,6 +44,8 @@
 		6507B1DB19E2BD1100107F34 /* ViralSwitchDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViralSwitchDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6507B1E019E2BD1100107F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6507B1E119E2BD1100107F34 /* ViralSwitchDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViralSwitchDemoTests.m; sourceTree = "<group>"; };
+		658650F51B2FFAF000FC1345 /* AMViralSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMViralSwitch.h; path = ../Source/AMViralSwitch.h; sourceTree = "<group>"; };
+		658650F61B2FFAF000FC1345 /* AMViralSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMViralSwitch.m; path = ../Source/AMViralSwitch.m; sourceTree = "<group>"; };
 		DE26375A2BD68FC3A5879264 /* Pods-ViralSwitchDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViralSwitchDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViralSwitchDemoTests/Pods-ViralSwitchDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,8 +71,8 @@
 		6504432719E2BD7100406B3F /* ViralSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				6504432819E2BD9500406B3F /* AMViralSwitch.h */,
-				6504432919E2BD9500406B3F /* AMViralSwitch.m */,
+				658650F51B2FFAF000FC1345 /* AMViralSwitch.h */,
+				658650F61B2FFAF000FC1345 /* AMViralSwitch.m */,
 			);
 			name = ViralSwitch;
 			path = ../../ViralSwitch;
@@ -292,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6504432A19E2BD9500406B3F /* AMViralSwitch.m in Sources */,
+				658650F71B2FFAF000FC1345 /* AMViralSwitch.m in Sources */,
 				6507B1CE19E2BD1100107F34 /* ViewController.m in Sources */,
 				6507B1CB19E2BD1100107F34 /* AppDelegate.m in Sources */,
 				6507B1C819E2BD1100107F34 /* main.m in Sources */,
