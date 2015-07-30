@@ -62,6 +62,11 @@ NSString *const AMElementToValue = @"AMElementToValue";
     [self switchChanged:self];
 }
 
+- (void)setOnTintColor:(UIColor *)onColor {
+    [super setOnTintColor:onColor];
+    self.shape.fillColor = onColor.CGColor;
+}
+
 - (void)switchChanged:(UISwitch *)sender {
     if (sender.on) {
         [CATransaction begin];
