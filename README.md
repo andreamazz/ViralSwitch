@@ -25,7 +25,7 @@ github "andreamazz/ViralSwitch"
 ```
 
 #Usage
-AMViralSwitch is a drop-in replacement of UISwitch. You just need to set the `onTintColor` property of the switch, and it will automatically _infect_ its superview with the selected color.
+`AMViralSwitch` is a drop-in replacement of `UISwitch`. You just need to set the `onTintColor` property of the switch, and it will automatically _infect_ its superview with the selected color.
 
 #Animate views
 You can animate other views alongside the switch _infection_. Typically you'll want to change color to views or labels that are inside the same superview. You can animate CoreAnimation properties likes this: 
@@ -40,6 +40,7 @@ self.greenSwitch.animationElementsOn = @[
 ```
 
 To animate the `textColor` of an `UILabel` the syntax is slightly different:
+
 ```objc
 self.blueSwitch.animationElementsOn = @[
     @{ AMElementView: self.blueLabel,
@@ -47,7 +48,9 @@ self.blueSwitch.animationElementsOn = @[
        AMElementToValue: [UIColor whiteColor] }
 ];
 ```
+
 Follow the same principle to animate the `tintColor` of your `UIButton`s:
+
 ```objc
 self.blueSwitch.animationElementsOn = @[
     @{ AMElementView: self.infoButton,
@@ -58,7 +61,7 @@ self.blueSwitch.animationElementsOn = @[
 
 #MIT License
 
-	Copyright (c) 2014 Andrea Mazzini. All rights reserved.
+	Copyright (c) 2015 Andrea Mazzini. All rights reserved.
 
 	Permission is hereby granted, free of charge, to any person obtaining a
 	copy of this software and associated documentation files (the "Software"),

@@ -33,23 +33,33 @@
         NSLog(@"Animation Off");
     };
 
-    self.blueSwitch.animationElementsOn = @[
-                                            @{ AMElementView: self.blueLabel,
-                                               AMElementKeyPath: @"textColor",
-                                               AMElementToValue: [UIColor whiteColor] },
-                                            @{ AMElementView: self.infoButton,
-                                               AMElementKeyPath: @"tintColor",
-                                               AMElementToValue: [UIColor whiteColor] }
-                                            ];
+    self.blueSwitch.animationElementsOn =
+    @[
+      @{ AMElementView: self.blueLabel,
+         AMElementKeyPath: @"textColor",
+         AMElementToValue: [UIColor whiteColor] },
+      @{ AMElementView: self.infoButton,
+         AMElementKeyPath: @"tintColor",
+         AMElementToValue: [UIColor whiteColor] }
+      ];
 
-    self.blueSwitch.animationElementsOff = @[
-                                             @{ AMElementView: self.blueLabel,
-                                                AMElementKeyPath: @"textColor",
-                                                AMElementToValue: [UIColor blackColor] },
-                                             @{ AMElementView: self.infoButton,
-                                                AMElementKeyPath: @"tintColor",
-                                                AMElementToValue: [UIColor blackColor] }
-                                             ];
+    self.blueSwitch.animationElementsOff =
+    @[
+      @{ AMElementView: self.blueLabel,
+         AMElementKeyPath: @"textColor",
+         AMElementToValue: [UIColor blackColor] },
+      @{ AMElementView: self.infoButton,
+         AMElementKeyPath: @"tintColor",
+         AMElementToValue: [UIColor blackColor] }
+      ];
+
+    self.blueSwitch.completionOn = ^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    };
+
+    self.blueSwitch.completionOff = ^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    };
 
     self.greenSwitch.animationElementsOn = @[
                                              @{ AMElementView: self.greenView.layer,

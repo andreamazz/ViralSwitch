@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Fancy Pixel. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 /** @constant AMViralSwitch AMElementView View animated alongside the switch */
 FOUNDATION_EXPORT NSString *const AMElementView;

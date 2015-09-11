@@ -17,35 +17,90 @@ SpecBegin(ViralSwitchDemoTests)
 
 #define kRECORD     NO
 
+__block AMViralSwitch *subject;
+__block UIViewController *controller;
+__block UILabel *label;
+
 describe(@"AMViralSwitch", ^{
-    
-    it(@"SwitchOn", ^{
-        UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-        UIViewController *controller = [[UIViewController alloc] init];
-        
-        window.rootViewController = controller;
-        expect(controller.view).willNot.beNil();
-        controller.view.backgroundColor = [UIColor whiteColor];
+    describe(@"switchOn", ^{
 
-        [window makeKeyAndVisible];
-        
-        AMViralSwitch *viralSwitch = [[AMViralSwitch alloc] init];
-        viralSwitch.frame = CGRectMake(controller.view.frame.size.width / 2 - viralSwitch.frame.size.width / 2, controller.view.frame.size.height / 2 - viralSwitch.frame.size.height / 2, viralSwitch.frame.size.width, viralSwitch.frame.size.height);
-        viralSwitch.onTintColor = [UIColor redColor];
-        [controller.view addSubview:viralSwitch];
+        beforeEach(^{
+            UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-        [viralSwitch awakeFromNib];
-        
-        if (kRECORD) expect(controller.view).will.recordSnapshotNamed(@"SwitchOff");
-        expect(controller.view).will.haveValidSnapshotNamed(@"SwitchOff");
+            controller = [[UIViewController alloc] init];
 
-        viralSwitch.on = YES;
-        
-        if (kRECORD) expect(controller.view).will.recordSnapshotNamed(@"SwitchOn");
-        expect(controller.view).will.haveValidSnapshotNamed(@"SwitchOn");
-        
+            window.rootViewController = controller;
+            expect(controller.view).willNot.beNil();
+            controller.view.backgroundColor = [UIColor whiteColor];
+
+            [window makeKeyAndVisible];
+
+            subject = [[AMViralSwitch alloc] init];
+            subject.frame = CGRectMake(controller.view.frame.size.width / 2 - subject.frame.size.width / 2, controller.view.frame.size.height / 2 - subject.frame.size.height / 2, subject.frame.size.width, subject.frame.size.height);
+            subject.onTintColor = [UIColor redColor];
+            [controller.view addSubview:subject];
+
+            label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 50)];
+            label.text = @"Hello!";
+            label.textColor = [UIColor blackColor];
+            [controller.view addSubview:label];
+
+            [subject awakeFromNib];
+        });
+
+        it(@"looks right", ^{
+            if (kRECORD) expect(controller.view).will.recordSnapshotNamed(@"SwitchOff");
+            expect(controller.view).will.haveValidSnapshotNamed(@"SwitchOff");
+
+            subject.on = YES;
+
+            if (kRECORD) expect(controller.view).will.recordSnapshotNamed(@"SwitchOn");
+            expect(controller.view).will.haveValidSnapshotNamed(@"SwitchOn");
+        });
+
+        it(@"calls the completion handlers", ^{
+            __block int meaningOfLife = 0;
+            subject.completionOn = ^{
+                meaningOfLife = 42;
+            };
+            subject.completionOff = ^{
+                meaningOfLife = 0;
+            };
+            subject.on = YES;
+
+            expect(meaningOfLife).after(1).to.equal(42);
+
+            subject.on = NO;
+
+            expect(meaningOfLife).after(1).to.equal(0);
+        });
+
+        it(@"animates fellow views", ^{
+            subject.animationElementsOn =
+            @[
+              @{ AMElementView: label,
+                 AMElementKeyPath: @"textColor",
+                 AMElementToValue: [UIColor whiteColor] }
+              ];
+
+            subject.animationElementsOff =
+            @[
+              @{ AMElementView: label,
+                 AMElementKeyPath: @"textColor",
+                 AMElementToValue: [UIColor blackColor] }
+              ];
+
+            subject.on = YES;
+
+            expect(label.textColor).after(1).to.equal([UIColor whiteColor]);
+
+            subject.on = NO;
+
+            expect(label.textColor).after(1).to.equal([UIColor blackColor]);
+        });
     });
+    
 });
 
 SpecEnd
