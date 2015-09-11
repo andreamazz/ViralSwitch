@@ -90,7 +90,6 @@ NSString *const AMElementToValue = @"AMElementToValue";
 
         [self animateElementsFrom:self.animationElementsOn];
         [CATransaction commit];
-
     } else {
         [CATransaction begin];
         if (self.completionOff) {
@@ -113,7 +112,6 @@ NSString *const AMElementToValue = @"AMElementToValue";
 
         [self animateElementsFrom:self.animationElementsOff];
         [CATransaction commit];
-
     }
 }
 

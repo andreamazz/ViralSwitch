@@ -17,6 +17,10 @@ FOUNDATION_EXPORT NSString *const AMElementFromValue;
 /** @constant AMViralSwitch AMElementView End point for the animated view */
 FOUNDATION_EXPORT NSString *const AMElementToValue;
 
+/** AMViralSwitch
+ *
+ * UISwitch subclass that 'infects' the parent view with the onTintColor when the switch is turned on
+ */
 @interface AMViralSwitch : UISwitch
 
 /**-----------------------------------------------------------------------------
