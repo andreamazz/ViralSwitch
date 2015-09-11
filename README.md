@@ -60,6 +60,9 @@ self.blueSwitch.animationElementsOn = @[
 ];
 ```
 
+#Author
+[Andrea Mazzini](https://twitter.com/theandreamazz)
+
 #MIT License
 
 	Copyright (c) 2015 Andrea Mazzini. All rights reserved.
