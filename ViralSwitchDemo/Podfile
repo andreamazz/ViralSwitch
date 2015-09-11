@@ -10,6 +10,6 @@ end
 target 'ViralSwitchDemoTests' do
   pod 'Specta'
   pod 'Expecta'
-  pod 'Expecta+Snapshots'
+  pod 'Expecta+Snapshots', '~> 1.3.4'
 end
 

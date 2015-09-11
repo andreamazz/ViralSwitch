@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/andreamazz/ViralSwitch.png)](https://travis-ci.org/andreamazz/ViralSwitch)
 [![Cocoapods](https://cocoapod-badges.herokuapp.com/v/AMViralSwitch/badge.png?style=flat)](http://cocoapods.org/?q=amviralswitch)
+[![Coverage Status](https://coveralls.io/repos/andreamazz/ViralSwitch/badge.svg)](https://coveralls.io/r/andreamazz/ViralSwitch)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 UISwitch subclass that 'infects' the parent view with the `onTintColor` when the switch is turned on. Inspired by [this Dribble](https://dribbble.com/shots/1749645-Contact-Sync) by [Ramotion](https://dribbble.com/teams/Ramotion).

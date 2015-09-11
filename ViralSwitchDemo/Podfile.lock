@@ -8,7 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Expecta
-  - Expecta+Snapshots
+  - Expecta+Snapshots (~> 1.3.4)
   - Specta
 
 SPEC CHECKSUMS:
