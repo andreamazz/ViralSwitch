@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AMViralSwitch"
-  s.version      = "0.3.4"
+  s.version      = "1.0.0"
   s.summary      = "Dropin replacement of UISwitch that 'infects' the parent view with the onTintColor when the switch is turned on."
 
   s.description  = <<-DESC
