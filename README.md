@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="640" height="240" src="assets/logo.png"/>
+  <img width="420" height="240" src="assets/logo.png"/>
 </p>
 
 [![Build Status](https://travis-ci.org/andreamazz/ViralSwitch.png)](https://travis-ci.org/andreamazz/ViralSwitch)
@@ -9,6 +9,11 @@
 
 UISwitch subclass that 'infects' the parent view with the `onTintColor` when the switch is turned on. Inspired by [this Dribble](https://dribbble.com/shots/1749645-Contact-Sync) by [Ramotion](https://dribbble.com/teams/Ramotion).
 
+<p align="center">
+  <a href='https://appetize.io/app/0c9gj9epg9bnv87c4mu94udcfr' alt='Live demo'>
+    <img width="50" height="60" src="assets/demo.png"/>
+  </a>
+</p>
 
 #Screenshot
 ![ViralSwitch](https://raw.githubusercontent.com/andreamazz/ViralSwitch/master/assets/screenshot.gif)
@@ -26,14 +31,49 @@ github "andreamazz/ViralSwitch"
 ```
 
 #Usage
-`AMViralSwitch` is a drop-in replacement of `UISwitch`. You just need to set the `onTintColor` property of the switch, and it will automatically _infect_ its superview with the selected color.
+`AMViralSwitch` is a drop-in replacement of `UISwitch`:  
+- Use `AMViralSwitch` instead of `UISwitch`
+- Set the `onTintColor` property of the switch
+
+The switch will automatically _infect_ its superview with the selected color.
+
+##Animation duration
+Use `animationDuration` property to control the animation's speed:
+```swift
+self.toggle.animationDuration = 1.0
+```
+
+##Animation completion
+You can set a completion block for both `on` and `off` animations:
+```swift
+self.toggle.completionOn = {
+  print("Enabled")
+}
+
+self.toggle.completionOff = {
+  print("Disabled")
+}
+```
 
 #Animate views
 You can animate other views alongside the switch _infection_. Typically you'll want to change color to views or labels that are inside the same superview. You can animate CoreAnimation properties likes this: 
 
+###Swift
+```swift
+toggle.animationElementsOn = [
+    [
+        AMElementView: self.greenView.layer,
+        AMElementKeyPath: "backgroundColor",
+        AMElementFromValue: UIColor.blackColor().CGColor,
+        AMElementToValue: UIColor.whiteColor().CGColor
+    ]
+]
+```
+
+###Objective-C
 ```objc
-self.greenSwitch.animationElementsOn = @[
-   @{ AMElementView: self.greenView.layer,
+self.toggle.animationElementsOn = @[
+   @[ AMElementView: self.greenView.layer,
       AMElementKeyPath: @"backgroundColor", 
       AMElementFromValue: (id)[UIColor clearColor].CGColor,
       AMElementToValue: (id)[UIColor whiteColor].CGColor }
@@ -42,6 +82,19 @@ self.greenSwitch.animationElementsOn = @[
 
 To animate the `textColor` of an `UILabel` the syntax is slightly different:
 
+###Swift
+```swift
+toggle.animationElementsOn = [
+    [
+        AMElementView: label,
+        AMElementKeyPath: "textColor",
+        AMElementFromValue: UIColor.blackColor(),
+        AMElementToValue: UIColor.whiteColor()
+    ]
+]
+```
+
+###Objective-C
 ```objc
 self.blueSwitch.animationElementsOn = @[
     @{ AMElementView: self.blueLabel,
@@ -52,6 +105,18 @@ self.blueSwitch.animationElementsOn = @[
 
 Follow the same principle to animate the `tintColor` of your `UIButton`s:
 
+###Swift
+```swift
+toggle.animationElementsOn = [
+    [
+        AMElementView: self.infoButton,
+        AMElementKeyPath: "tintColor",
+        AMElementToValue: UIColor.whiteColor()
+    ]
+]
+```
+
+###Objective-C
 ```objc
 self.blueSwitch.animationElementsOn = @[
     @{ AMElementView: self.infoButton,
@@ -61,7 +126,12 @@ self.blueSwitch.animationElementsOn = @[
 ```
 
 #Author
-[Andrea Mazzini](https://twitter.com/theandreamazz)
+[Andrea Mazzini](https://twitter.com/theandreamazz). I'm available for freelance work, feel free to contact me. 
+
+Want to support the development of [these free libraries](https://cocoapods.org/owners/734)? Buy me a coffee ☕️ via [Paypal](https://www.paypal.me/andreamazzini).  
+
+#Contributors
+Thanks to [everyone](https://github.com/andreamazz/ViralSwitch/graphs/contributors) kind enough to submit a pull request. 
 
 #MIT License
 
