@@ -101,14 +101,12 @@
 		6507B1C419E2BD1000107F34 /* ViralSwitchDemo */ = {
 			isa = PBXGroup;
 			children = (
+				65BED82F1BE65A21001FE9CC /* Resources */,
 				6504432719E2BD7100406B3F /* ViralSwitch */,
 				6507B1C919E2BD1100107F34 /* AppDelegate.h */,
 				6507B1CA19E2BD1100107F34 /* AppDelegate.m */,
 				6507B1CC19E2BD1100107F34 /* ViewController.h */,
 				6507B1CD19E2BD1100107F34 /* ViewController.m */,
-				6507B1CF19E2BD1100107F34 /* Main.storyboard */,
-				6507B1D219E2BD1100107F34 /* Images.xcassets */,
-				6507B1D419E2BD1100107F34 /* LaunchScreen.xib */,
 				6507B1C519E2BD1100107F34 /* Supporting Files */,
 			);
 			path = ViralSwitchDemo;
@@ -138,6 +136,16 @@
 				6507B1E019E2BD1100107F34 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65BED82F1BE65A21001FE9CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6507B1CF19E2BD1100107F34 /* Main.storyboard */,
+				6507B1D219E2BD1100107F34 /* Images.xcassets */,
+				6507B1D419E2BD1100107F34 /* LaunchScreen.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		8700B0DEFAF38A4C3A2215EB /* Pods */ = {
