@@ -3,7 +3,7 @@
 </p>
 
 [![Build Status](https://travis-ci.org/andreamazz/ViralSwitch.png)](https://travis-ci.org/andreamazz/ViralSwitch)
-[![Cocoapods](https://cocoapod-badges.herokuapp.com/v/AMViralSwitch/badge.png?style=flat)](http://cocoapods.org/?q=amviralswitch)
+[![CocoaPods](https://cocoapod-badges.herokuapp.com/v/AMViralSwitch/badge.png?style=flat)](http://cocoapods.org/?q=amviralswitch)
 [![Coverage Status](https://coveralls.io/repos/andreamazz/ViralSwitch/badge.svg)](https://coveralls.io/r/andreamazz/ViralSwitch)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
