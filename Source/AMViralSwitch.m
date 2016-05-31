@@ -77,7 +77,6 @@ NSString *const AMElementToValue = @"AMElementToValue";
         // Reset
         [self.shape removeAnimationForKey:@"scaleDown"];
         [self.shape removeAnimationForKey:@"borderDown"];
-        self.layer.borderWidth = 0;
 
         CABasicAnimation *scaleAnimation = [self animateKeyPath:@"transform.scale"
                                                       fromValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.0001, 0.0001, 0.0001)]
@@ -86,6 +85,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
         [self.shape addAnimation:scaleAnimation forKey:@"scaleUp"];
 
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@0 toValue:@1 timing:kCAMediaTimingFunctionEaseIn];
+        borderAnimation.removedOnCompletion = NO;
         [self.layer addAnimation:borderAnimation forKey:@"borderUp"];
 
         [self animateElementsFrom:self.animationElementsOn];
@@ -99,7 +99,6 @@ NSString *const AMElementToValue = @"AMElementToValue";
         // Reset
         [self.shape removeAnimationForKey:@"scaleUp"];
         [self.shape removeAnimationForKey:@"borderUp"];
-        self.layer.borderWidth = 1;
 
         CABasicAnimation *scaleAnimation = [self animateKeyPath:@"transform.scale"
                                                       fromValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)]
@@ -108,6 +107,7 @@ NSString *const AMElementToValue = @"AMElementToValue";
         [self.shape addAnimation:scaleAnimation forKey:@"scaleDown"];
 
         CABasicAnimation *borderAnimation = [self animateKeyPath:@"borderWidth" fromValue:@1 toValue:@0 timing:kCAMediaTimingFunctionEaseOut];
+        borderAnimation.removedOnCompletion = NO;
         [self.layer addAnimation:borderAnimation forKey:@"borderDown"];
 
         [self animateElementsFrom:self.animationElementsOff];
