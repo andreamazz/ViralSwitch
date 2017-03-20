@@ -15,35 +15,35 @@ UISwitch subclass that 'infects' the parent view with the `onTintColor` when the
   </a>
 </p>
 
-#Screenshot
+# Screenshot
 ![ViralSwitch](https://raw.githubusercontent.com/andreamazz/ViralSwitch/master/assets/screenshot.gif)
 
-#Installation
+# Installation
 
-##Using cocoapods:
+## Using cocoapods:
 ```
 pod 'AMViralSwitch'
 ```
 
-##Using Carthage:
+## Using Carthage:
 ```
 github "andreamazz/ViralSwitch"
 ```
 
-#Usage
+# Usage
 `AMViralSwitch` is a drop-in replacement of `UISwitch`:  
 - Use `AMViralSwitch` instead of `UISwitch`
 - Set the `onTintColor` property of the switch
 
 The switch will automatically _infect_ its superview with the selected color.
 
-##Animation duration
+## Animation duration
 Use `animationDuration` property to control the animation's speed:
 ```swift
 self.toggle.animationDuration = 1.0
 ```
 
-##Animation completion
+## Animation completion
 You can set a completion block for both `on` and `off` animations:
 ```swift
 self.toggle.completionOn = {
@@ -55,10 +55,10 @@ self.toggle.completionOff = {
 }
 ```
 
-#Animate views
-You can animate other views alongside the switch _infection_. Typically you'll want to change color to views or labels that are inside the same superview. You can animate CoreAnimation properties likes this: 
+# Animate views
+You can animate other views alongside the switch _infection_. Typically you'll want to change color to views or labels that are inside the same superview. You can animate CoreAnimation properties likes this:
 
-###Swift
+### Swift
 ```swift
 toggle.animationElementsOn = [
     [
@@ -70,11 +70,11 @@ toggle.animationElementsOn = [
 ]
 ```
 
-###Objective-C
+### Objective-C
 ```objc
 self.toggle.animationElementsOn = @[
    @[ AMElementView: self.greenView.layer,
-      AMElementKeyPath: @"backgroundColor", 
+      AMElementKeyPath: @"backgroundColor",
       AMElementFromValue: (id)[UIColor clearColor].CGColor,
       AMElementToValue: (id)[UIColor whiteColor].CGColor }
 ];
@@ -82,7 +82,7 @@ self.toggle.animationElementsOn = @[
 
 To animate the `textColor` of an `UILabel` the syntax is slightly different:
 
-###Swift
+### Swift
 ```swift
 toggle.animationElementsOn = [
     [
@@ -94,7 +94,7 @@ toggle.animationElementsOn = [
 ]
 ```
 
-###Objective-C
+### Objective-C
 ```objc
 self.blueSwitch.animationElementsOn = @[
     @{ AMElementView: self.blueLabel,
@@ -105,7 +105,7 @@ self.blueSwitch.animationElementsOn = @[
 
 Follow the same principle to animate the `tintColor` of your `UIButton`s:
 
-###Swift
+### Swift
 ```swift
 toggle.animationElementsOn = [
     [
@@ -116,7 +116,7 @@ toggle.animationElementsOn = [
 ]
 ```
 
-###Objective-C
+### Objective-C
 ```objc
 self.blueSwitch.animationElementsOn = @[
     @{ AMElementView: self.infoButton,
@@ -125,17 +125,17 @@ self.blueSwitch.animationElementsOn = @[
 ];
 ```
 
-#Author
-[Andrea Mazzini](https://twitter.com/theandreamazz). I'm available for freelance work, feel free to contact me. 
+# Author
+[Andrea Mazzini](https://twitter.com/theandreamazz). I'm available for freelance work, feel free to contact me.
 
 Want to support the development of [these free libraries](https://cocoapods.org/owners/734)? Buy me a coffee ☕️ via [Paypal](https://www.paypal.me/andreamazzini).  
 
-#Contributors
-Thanks to [everyone](https://github.com/andreamazz/ViralSwitch/graphs/contributors) kind enough to submit a pull request. 
+# Contributors
+Thanks to [everyone](https://github.com/andreamazz/ViralSwitch/graphs/contributors) kind enough to submit a pull request.
 
-#MIT License
+# MIT License
 
-	Copyright (c) 2015 Andrea Mazzini. All rights reserved.
+	Copyright (c) 2017 Andrea Mazzini. All rights reserved.
 
 	Permission is hereby granted, free of charge, to any person obtaining a
 	copy of this software and associated documentation files (the "Software"),
@@ -155,4 +155,3 @@ Thanks to [everyone](https://github.com/andreamazz/ViralSwitch/graphs/contributo
 	CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-	
